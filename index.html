@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Currículum de Esther Gómez Sedeño">
+  <title>Esther Gómez Sedeño | Currículum</title>
+  <style>
+    :root {
+      /* Índigo principal para la navegación, la portada y los acentos. */
+      --color-primary: #5863D3;
+      /* Blanco para el texto sobre fondos oscuros y el fondo de las tarjetas. */
+      --color-white: #FFFFFF;
+      /* Gris claro para el fondo del contenido del currículum. */
+      --color-background: #F2F3F7;
+      /* Gris pizarra para el fondo visual de la portada. */
+      --color-cover: #5C6475;
+      /* Gris azulado para subtítulos y texto secundario. */
+      --color-muted: #7A8296;
+      /* Gris oscuro para el texto principal sobre fondo claro. */
+      --color-text: #34394A;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--color-text);
+      background: var(--color-background);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .site-header {
+      background: var(--color-primary);
+      color: var(--color-white);
+    }
+
+    .navigation {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem 2.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+    }
+
+    .navigation a {
+      padding: 0.35rem 0;
+      color: var(--color-white);
+      font-family: Georgia, "Times New Roman", serif;
+      font-style: italic;
+      text-decoration: none;
+    }
+
+    .navigation a:hover,
+    .navigation a:focus-visible {
+      text-decoration: underline;
+      text-underline-offset: 0.3em;
+    }
+
+    .intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(290px, 0.39fr);
+      max-width: 1400px;
+      min-height: 440px;
+      margin: 0 auto;
+      color: var(--color-white);
+      background: var(--color-cover);
+    }
+
+    .intro-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      min-height: 440px;
+      padding: clamp(2rem, 7vw, 6rem);
+      background:
+        linear-gradient(110deg, rgba(47, 53, 70, 0.76), rgba(92, 100, 117, 0.66)),
+        var(--color-cover);
+    }
+
+    .eyebrow {
+      margin: 0 0 0.8rem;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .intro h1 {
+      max-width: 700px;
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.7rem, 6vw, 5.3rem);
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.08;
+    }
+
+    .intro-subtitle {
+      margin: 1.1rem 0 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.15rem;
+      font-style: italic;
+    }
+
+    .profile-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      background: var(--color-primary);
+    }
+
+    .profile-photo {
+      display: block;
+      width: 142px;
+      height: 142px;
+      margin-bottom: 1.15rem;
+      border: 4px solid rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .profile-card h2 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.8rem;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.25;
+    }
+
+    .profile-summary {
+      max-width: 290px;
+      margin: 0.85rem 0 1.2rem;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 0.35rem;
+      overflow-wrap: anywhere;
+      font-size: 0.92rem;
+    }
+
+    .contact-list a {
+      text-decoration: none;
+    }
+
+    .contact-list a:hover,
+    .contact-list a:focus-visible {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: clamp(2.5rem, 7vw, 5.5rem) clamp(1.25rem, 5vw, 3.5rem);
+    }
+
+    .resume-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2.5rem 4rem;
+    }
+
+    .resume-section {
+      scroll-margin-top: 1.5rem;
+    }
+
+    .resume-section h2 {
+      margin: 0 0 1rem;
+      color: var(--color-primary);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.8rem, 3vw, 2.35rem);
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .resume-section p {
+      margin: 0 0 0.8rem;
+    }
+
+    .resume-section ul {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    .resume-section li + li {
+      margin-top: 0.45rem;
+    }
+
+    .entry + .entry {
+      margin-top: 1.15rem;
+    }
+
+    .entry strong {
+      color: var(--color-text);
+    }
+
+    .section-label {
+      margin-bottom: 0.4rem !important;
+      color: var(--color-muted);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 760px) {
+      .navigation {
+        gap: 0.45rem 1.25rem;
+        padding: 0.8rem 1rem;
+      }
+
+      .intro {
+        grid-template-columns: 1fr;
+      }
+
+      .intro-copy {
+        min-height: 330px;
+        padding: 2.5rem 1.5rem;
+      }
+
+      .profile-card {
+        padding: 2.25rem 1.5rem;
+      }
+
+      .resume-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .navigation {
+        justify-content: flex-start;
+        gap: 0.35rem 1rem;
+      }
+
+      .navigation a {
+        font-size: 0.94rem;
+      }
+
+      .intro h1 {
+        font-size: 2.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navigation" aria-label="Navegación principal">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#formacion">Formación y experiencia</a>
+      <a href="#habilidades">Aptitudes e idiomas</a>
+      <a href="#otros">Premios e intereses</a>
+    </nav>
+  </header>
+
+  <!-- ===== SECCIÓN: PORTADA ===== -->
+  <section class="intro" aria-labelledby="nombre-principal">
+    <div class="intro-copy">
+      <p class="eyebrow">Hola, soy</p>
+      <h1 id="nombre-principal">Esther Gómez Sedeño</h1>
+      <p class="intro-subtitle">Estudiante de Trabajo Social</p>
+    </div>
+    <aside class="profile-card" aria-label="Perfil y datos de contacto">
+      <img class="profile-photo" src="imagenes/foto.jpg" alt="Fotografía de Esther Gómez Sedeño">
+      <h2>Esther Gómez Sedeño</h2>
+      <p class="profile-summary">Estudiante de Trabajo Social, responsable, empática y comprometida.</p>
+      <div class="contact-list">
+        <a href="mailto:esthergomezsed@gmail.com">esthergomezsed@gmail.com</a>
+        <a href="tel:+34685249386">+34-685-249-386</a>
+        <span>Jerez, Cádiz</span>
+      </div>
+    </aside>
+  </section>
+  <!-- ===== FIN: PORTADA ===== -->
+
+  <main>
+    <div class="resume-grid">
+      <!-- ===== SECCIÓN: SOBRE MÍ ===== -->
+      <section class="resume-section" id="sobre-mi">
+        <p class="section-label">Mi perfil</p>
+        <h2>Sobre mí</h2>
+        <p>Estudiante de Trabajo Social, responsable, empática y comprometida. Motivada a seguir aprendiendo y desarrollarme en el ámbito social.</p>
+      </section>
+      <!-- ===== FIN: SOBRE MÍ ===== -->
+
+      <!-- ===== SECCIÓN: FORMACIÓN ===== -->
+      <section class="resume-section" id="formacion">
+        <p class="section-label">Estudios</p>
+        <h2>Formación</h2>
+        <div class="entry">
+          <p><strong>Grado Universitario (2023-Actualidad)</strong><br>Trabajo Social, Universidad de Cádiz.</p>
+        </div>
+        <div class="entry">
+          <p><strong>Instituto IES Las Viñas (2017-2023)</strong><br>Educación Secundaria Obligatoria (ESO) y Bachillerato de Ciencias Sociales.</p>
+        </div>
+        <div class="entry">
+          <p><strong>Colegio Pablo Picasso (2008-2017)</strong><br>Infantil y educación primaria.</p>
+        </div>
+      </section>
+      <!-- ===== FIN: FORMACIÓN ===== -->
+
+      <!-- ===== SECCIÓN: EXPERIENCIA ===== -->
+      <section class="resume-section" id="experiencia">
+        <p class="section-label">Trayectoria</p>
+        <h2>Experiencia</h2>
+        <div class="entry">
+          <p><strong>Experiencia laboral</strong><br>Aún no ha ejercido.</p>
+        </div>
+        <div class="entry">
+          <p><strong>Voluntariado</strong><br>Participación en un programa con niños en peligro de exclusión, hablando con ellos y ayudándolos con sus tareas.</p>
+        </div>
+      </section>
+      <!-- ===== FIN: EXPERIENCIA ===== -->
+
+      <!-- ===== SECCIÓN: HABILIDADES ===== -->
+      <section class="resume-section" id="habilidades">
+        <p class="section-label">Aptitudes</p>
+        <h2>Habilidades</h2>
+        <ul>
+          <li>Responsable</li>
+          <li>Escucha activa</li>
+          <li>Trabajo en equipo</li>
+          <li>Empatía</li>
+          <li>Resolución de problemas</li>
+          <li>Compromiso</li>
+          <li>Acompañamiento</li>
+        </ul>
+      </section>
+      <!-- ===== FIN: HABILIDADES ===== -->
+
+      <!-- ===== SECCIÓN: IDIOMAS ===== -->
+      <section class="resume-section" id="idiomas">
+        <p class="section-label">Idiomas</p>
+        <h2>Idiomas</h2>
+        <ul>
+          <li><strong>Español:</strong> Nativo</li>
+          <li><strong>Inglés:</strong> B2</li>
+        </ul>
+      </section>
+      <!-- ===== FIN: IDIOMAS ===== -->
+
+      <!-- ===== SECCIÓN: OTROS ===== -->
+      <section class="resume-section" id="otros">
+        <p class="section-label">Información adicional</p>
+        <h2>Otros</h2>
+        <p>—</p>
+      </section>
+      <!-- ===== FIN: OTROS ===== -->
+    </div>
+  </main>
+</body>
+</html>
